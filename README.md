@@ -31,6 +31,6 @@ To predict the protein-ligand binding affinity from the generated features, firs
 python3 predict.py \
     -tf ${test_feature_file}\
     -model ${trained_model}\
-    -scaler ../training/train_scaler.scaler\\
+    -scaler ./scaler\
     -out ${output_directory}
 ```
