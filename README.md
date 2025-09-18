@@ -34,3 +34,11 @@ python3 predict.py \
     -scaler ./scaler\
     -out ${output_directory}
 ```
+## 3. Retrain DeepGGL
+To retrain the DeepGGL, first generate features for the training set `labeled_data/training_set.csv` and the validation set `labeled_data/validation_set.csv` for cutoff values of 5 Å, 10 Å, and 15 Å using the command from step 1, and then combine the features. Second, use the script `training/train.py` to retrain the model.
+```bash
+python3 train.py \
+        -tf ${training_feature_file} \
+        -vf ${validation_feature_file} \
+        -m ${model_outname}
+```
